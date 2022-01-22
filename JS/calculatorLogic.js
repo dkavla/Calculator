@@ -59,10 +59,12 @@ operator.forEach(btn => {
             prevDisplay.textContent = "0";
             answerActive = true;
         }else{
+            answerActive = false;
             inputs.push(parseFloat(displayValue));
             inputs.push(btn.innerText);
             prevDisplay.innerText = printToPrev();
             displayValue = "0";
+            currentDisplay.textContent = displayValue;
         }
 
     });
@@ -96,8 +98,8 @@ let equals = () => {
     currentOperator = "";
     result = inputs[0];
     for(let i = 1; i < inputs.length; i++){
-        if(inputs[i] == "+" || inputs[i] == "-" || inputs == "*"
-            || inputs == "/"){
+        if(inputs[i] == "+" || inputs[i] == "-" || inputs[i] == "*"
+            || inputs[i] == "/"){
                 currentOperator = inputs[i];
                 continue
         }else if(typeof inputs[i] == "number"){
