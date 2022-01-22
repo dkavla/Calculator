@@ -51,7 +51,11 @@ operator.forEach(btn => {
         if(btn.innerText == "="){
             inputs.push(parseFloat(displayValue));
             displayValue = equals();
-            currentDisplay.textContent = displayValue;
+            if(displayValue === undefined){
+                currentDisplay.textContent = "Error"
+            }else{
+                currentDisplay.textContent = displayValue;
+            }
             prevDisplay.textContent = "0";
             answerActive = true;
         }else{
@@ -144,7 +148,7 @@ let multiply = (numOne, numTwo) => {
 
 let divide = (numOne, numTwo) => {
     if(numTwo === 0){
-        return "Error: Division By Zero";
+        return undefined;
     }
     return numOne / numTwo;
 };
