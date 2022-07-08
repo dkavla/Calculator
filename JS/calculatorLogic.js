@@ -7,6 +7,8 @@ let displayValue = "0";
 const prevDisplay = document.querySelector('.previous-display');
 const currentDisplay = document.querySelector('.current-display');
 
+/* The decimalPoint and signs variables are provided event listeners
+in order to add them to the calculator's display */
 const decimalPoint = document.querySelector('.decimal');
 decimalPoint.addEventListener('click', () => {
     displayValue += ".";
@@ -31,6 +33,7 @@ percentage.addEventListener('click', () => {
 let roundLargeDecimal = (value) => {
     return Number(Math.round(value+'e'+ 2)+'e-'+ 2);
 };
+
 
 const operator = document.querySelectorAll('.operation');
 /**
